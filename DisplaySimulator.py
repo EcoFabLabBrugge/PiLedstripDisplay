@@ -43,7 +43,8 @@ class DisplaySimulator:
         while y < self.yPixel:
             x = 0
             while x < self.xPixel:
-                self.pixels[pixNum].config(background = '#' + format(frame[y][x], 'x'))
+                if (self.pixels[pixNum]["background"] != ('#' + format(frame[y][x], 'x'))):
+                    self.pixels[pixNum].config(background = '#' + format(frame[y][x], 'x'))
                 pixNum += 1
                 x +=1
             y += 1
